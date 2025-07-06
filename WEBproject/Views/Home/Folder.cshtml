@@ -1,0 +1,8 @@
+﻿<form asp-action="SaveFolder" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="name">Folder Name</label>
+        <input type="text" asp-for="Name" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

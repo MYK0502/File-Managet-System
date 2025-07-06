@@ -1,0 +1,59 @@
+﻿@model List<File>
+
+<style>
+ body{
+        background: #80808045;
+  }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card col-md-4 offset-2 bg-info float-left">
+                <div class="card-body text-white">
+                    <h4><b>Users</b></h4>
+                    <hr>
+                    <span class="card-icon"><i class="fa fa-users"></i></span>
+                    <h3 class="text-right"><b>@ViewBag.UserCount</b></h3>
+                </div>
+            </div>
+            <div class="card col-md-4 offset-2 bg-primary ml-4 float-left">
+                <div class="card-body text-white">
+                    <h4><b>Files</b></h4>
+                    <hr>
+                    <span class="card-icon"><i class="fa fa-file"></i></span>
+                    <h3 class="text-right"><b>@ViewBag.FileCount</b></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3 ml-3 mr-3">
+        <div class="card col-md-12">
+            <div class="card-body">
+                <table width="100%">
+                    <tr>
+                        <th width="20%">Uploader</th>
+                        <th width="30%">Filename</th>
+                        <th width="20%">Date</th>
+                        <th width="30%">Description</th>
+                    </tr>
+                    @foreach (var file in Model)
+                    {
+                        <tr class="file-item" data-id="@file.Id" data-name="@file.Name">
+                            <td><i>@file.User.Name</i></td>
+                            <td>
+                                <large>
+                                    <span><i class="fa @file.IconClass"></i></span>
+                                    <b>@file.Name</b>
+                                </large>
+                            </td>
+                            <td><i>@file.DateUpdated.ToString("yyyy/MM/dd hh:mm tt")</i></td>
+                            <td><i>@file.Description</i></td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

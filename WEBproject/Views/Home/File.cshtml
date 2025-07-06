@@ -1,0 +1,12 @@
+﻿<form asp-action="SaveFile" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label for="upload">Upload File</label>
+        <input type="file" name="upload" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
